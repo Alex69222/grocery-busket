@@ -79,6 +79,8 @@ function displayAlert(text, action){
 }
 //clear items
 function clearItems(){
+   const confirm = window.confirm('Очистить корзину?')
+   if(confirm){
     const items = document.querySelectorAll('.grocery-item')
     if(items.length > 0){
         items.forEach(item=>{
@@ -90,6 +92,8 @@ function clearItems(){
     setBackToDefault()
     localStorage.removeItem('list')
     getSum()
+   }
+    
 }
 //delete function
 function deleteItem(e){
@@ -206,7 +210,6 @@ function setupItems(){
     if(items.length > 0){
         items.forEach(el =>{
             createListItem(el.id, el.value, el.price ? el.price + 'р' : '')
-            console.log(el.value, el.price, el.id);
         })
         
         container.classList.add('show-container')
@@ -223,6 +226,7 @@ function setupItems(){
         element.setAttributeNode(attribute)
         element.innerHTML = `
         <p class="title">${value}</p>
+        <div class="grocery-item-info">
         <span class="price">${price}</span>
         <div class="btn-container">
             <button type="button" class="price-btn">
@@ -234,6 +238,7 @@ function setupItems(){
             <button type="button" class="delete-btn">
                 <i class="fas fa-trash"></i>
             </button>
+        </div>
         </div>
         `
     const deleteBtn = element.querySelector('.delete-btn')

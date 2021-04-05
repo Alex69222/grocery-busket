@@ -280,11 +280,17 @@ Grocery List
 .grocery-item:hover .title {
   color: var(--clr-grey-5);
 }
+.grocery-item-info{
+    display: flex;
+}
 .title {
   margin-bottom: 0;
   color: var(--clr-grey-1);
   letter-spacing: 2px;
   transition: var(--transition);
+}
+.price{
+    margin-right: 2rem;
 }
 .edit-btn,
 .delete-btn,
@@ -329,4 +335,32 @@ Grocery List
 }
 .clear-btn:hover {
   color: var(--clr-red-dark);
+}
+
+@media(max-width:   550px){
+    .section-center{
+        padding: 0;
+        width: 100vw;
+    }
+    .grocery-container{
+        padding-bottom: 0.1rem;
+    }
+    .form-control{
+        margin: 0 .3rem;
+    }
+    .total{
+        padding: 0 1rem;
+    }
+    .clear-btn{
+        width: auto;
+        height: auto;
+        margin: 1rem auto;
+        background-color: #721c24;
+        color: #fff;
+        border-radius: 50px;
+        padding: 0.2rem;
+    }
+    .title{
+        flex-basis: 30%;
+    }
 }
