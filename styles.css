@@ -355,10 +355,10 @@ Grocery List
         width: auto;
         height: auto;
         margin: 1rem auto;
-        background-color: #721c24;
+        background-color: #e27d0a;
         color: #fff;
         border-radius: 50px;
-        padding: 0.2rem;
+        padding: 0.4rem;
     }
     .title{
         flex-basis: 30%;
