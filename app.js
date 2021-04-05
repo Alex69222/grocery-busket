@@ -97,7 +97,7 @@ function clearItems(){
 }
 //delete function
 function deleteItem(e){
-    const element = e.currentTarget.parentElement.parentElement
+    const element = e.currentTarget.parentElement.parentElement.parentElement
     const id = element.dataset.id
     list.removeChild(element)
     if(list.children.length === 0){
@@ -111,9 +111,10 @@ function deleteItem(e){
 }
 //edit function
 function editItem(e){
-    const element = e.currentTarget.parentElement.parentElement
+    const element = e.currentTarget.parentElement.parentElement.parentElement
     //set edit item
-    editElement = e.currentTarget.parentElement.previousElementSibling.previousElementSibling
+    editElement = e.currentTarget.parentElement.parentElement.previousElementSibling
+    console.log(editElement);
     //set form value
     grocery.value = editElement.innerHTML
     editFlag = true
@@ -124,9 +125,8 @@ function editItem(e){
 }
 //set price
 function setPrice(e){
-    const element = e.currentTarget.parentElement.parentElement
+    const element = e.currentTarget.parentElement.parentElement.parentElement
     price = e.currentTarget.parentElement.previousElementSibling
-    // console.log(price);
     priceFlag = true
     editID = element.dataset.id
     submitBtn.textContent = 'цена'
